@@ -1,0 +1,21 @@
+name: Hookah
+version: '1.0.0'
+main: ua.fentez.hookah.HookahPlugin
+api-version: '1.21'
+author: Fentez
+website: https://fentez.pp.ua
+description: Interactive Brewing Stand hookah plugin with 3D smoke rings, potion effects, and overpuff mechanics.
+
+commands:
+  hookah:
+    description: "Main administration command for the Hookah plugin."
+    usage: "/hookah reload"
+    permission: hookah.admin
+
+permissions:
+  hookah.admin:
+    description: "Allows access to Hookah administration commands."
+    default: op
+  hookah.reload:
+    description: "Allows reloading the Hookah configuration."
+    default: op

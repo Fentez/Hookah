@@ -1,0 +1,85 @@
+# ==========================================
+#         Hookah Configuration File
+# ==========================================
+
+# --- General Smoke Settings ---
+settings:
+  # The maximum allowed puff level visually (Action Bar size)
+  max-puff-level: 8.0
+  # How much puff level is added per right click
+  puff-amount-per-click: 1.0
+  # Speed of the regular smoke particles flying out
+  smoke-speed: 0.3
+  # Distance multiplier for the regular smoke
+  smoke-distance-multiplier: 0.1
+
+# --- Poison Settings ---
+poison:
+  # Enable poison logic for overpuffing or holding breath
+  enabled: true
+  # The threshold where the player gets poisoned for puffing too much
+  overpuff-threshold: 8.0
+  # If overpuffed, drop the puff level to this amount
+  overpuff-drop-to: 4.0
+  # Ticks (20 ticks = 1 second) player can hold breath before poison (default: 5 seconds)
+  hold-breath-ticks: 100
+  # How long the poison effect lasts in ticks (default: 5 seconds)
+  duration-ticks: 100
+  # List of potion effects applied when poisoned (names from minecraft potion registry)
+  effects:
+    - "poison"
+    - "nausea"
+
+# --- Rings Settings ---
+rings:
+  # Enable left click while sneaking to shoot smoke rings
+  enabled: true
+  # How much puff level a smoke ring consumes
+  cost: 1.0
+  # Flight speed of the ring
+  speed: 0.02
+  # Max random spin speed of the ring (degrees per tick)
+  spin-max-speed: 15.0
+  # Minimum scale of the ring text
+  text-scale-min: 1.0
+  # Maximum scale of the ring text
+  text-scale-max: 2.0
+  # The color of the ring text (Standard Minecraft color names like WHITE, GRAY, RED, etc.)
+  text-color: "WHITE"
+  # Amount of particles spawned when a ring hits a block
+  hit-particles: 2
+  # The symbols that the ring goes through as it flies (animates sequentially)
+  symbols:
+    - "◦"
+    - "○"
+    - "⭕"
+
+# --- Potion Effects from Brewing Stand ---
+effects:
+  # Duration of the random potion effect given by the brewing stand in ticks (40 = 2 seconds)
+  duration-ticks: 40
+  # List of potion types that the hookah will ignore (e.g., HEALING, STRONG_HEALING, HARMING)
+  blocked-potions:
+    - "HEALING"
+    - "STRONG_HEALING"
+
+# --- Messages and Visuals ---
+messages:
+  actionbar:
+    # Use standard color codes (&a, &b, etc.)
+    # Available placeholders: {bars}, {current}, {max}
+    format: "&b💨 Puff: &7[{bars}] &f{current}/{max}"
+    # Symbol for a filled bar
+    filled-symbol: "■"
+    # Symbol for an empty bar
+    empty-symbol: "□"
+  commands:
+    reload-success: "&a[Hookah] Configuration reloaded successfully!"
+    no-permission: "&cYou don't have permission to use this command."
+    usage: "&e[Hookah] Usage: /hookah reload"
+
+# Keywords that a Brewing Stand custom name must contain to act as a hookah (case-insensitive)
+item-keywords:
+  - "hookah"
+  - "shisha"
+  - "кальян"
